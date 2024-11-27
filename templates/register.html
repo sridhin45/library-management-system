@@ -1,0 +1,74 @@
+{% extends 'commonbase.html' %}
+
+{% block content %}
+
+<body
+    style="background-image: url('./Product/images.png');background-color: rgb(250, 246, 240);background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <div class="container border p-4">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <form method="post" action="">
+                    {% csrf_token %}
+                <table width="100%">
+                    <tr>
+                        <th>Name</th>
+                        <td><input type="text" name="name" class="form-control">
+                        <br></td>
+                    
+                    </tr>
+                    <br>
+               
+                    <tr>
+                        <th>age</th>
+                        <td><input type="age" name="age" class="form-control">
+                        <br></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th>gender</th>
+                        <td>
+                        <select name="gender" id="" class="form-control">
+                            <option value="">--select--</option>
+                            <option value="male" class="form-control">male</option>
+                            <option value="female" class="form-control">female</option>
+                            <option value="other" class="form-control">other</option>
+                        </select>
+                        <br>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th>Address</th>
+                        <td><textarea  name="address" cols="50" rows="5" class="form-control"></textarea><br></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td><input type="text"  name="username" class="form-control"><br></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th>Password</th>
+                        <td><input type="password"  name="password" class="form-control"><br></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><input type="submit" value="Register" class="btn btn-danger"></td>
+                    </tr>
+                </table>
+            </form>
+            </table>
+        </div>
+        <div class="col-md-3 col-sm-12">
+        </div>
+    </div>
+    </div>
+</body>
+
+
+<br>
+<br>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in m %}
+    <form action="{% url 'edit' i.id %}" method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" name="name" value="{{i.name}}">
+        <br>
+        <br>
+        <label for="">category</label>
+        <select name="category" id="">
+            <option value="">{{i.category.name}}</option>
+            {% for i in bo %}
+            <option value="{{i.id}}">{{i.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="">author</label>
+        <input type="text" name="author" value="{{i.author}}">
+        <br>
+        <br>
+        <label for="">description</label>
+        <textarea name="description" id="" cols="30" rows="10">{{i.description}}</textarea>
+        <br>
+        <br>
+        <label for="">coverphoto</label>
+        <input type="file" name="coverphoto">
+        <img src="{{i.coverphoto.url}}" alt="" style="width:200px;height:200px">
+        <br>
+        <br>
+        <label for="">No_of_copies</label>
+        <input type=" positivenumber" name="No_of_copies" value="{{i.No_of_copies}}">
+        <br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'commonbase.html' %}
+
+{% block content %}
+
+<table class="table table-bordered table-hover table-striped table-responsive-md">
+    <tr class="bg-warning">
+            <th>name</th>
+            <th>author</th>
+            <th>category</th>
+            <th>description</th>
+            <th>coverphoto</th>
+            <th>student name</th>
+            <th>age</th>
+            <th>addrress</th>
+            <th>gender</th>
+            <th>username</th>
+        </tr>
+        {% for i in his %}
+        <tr>
+            <th>{{i.booking_id.name}}</th>
+            <th>{{i.booking_id.author}}</th>
+            <th>{{i.booking_id.category.name}}</th>
+            <th>{{i.booking_id.description}}</th>
+            <th><img src="{{i.booking_id.coverphoto.url}}" alt="" style="width:200px;height:200px"></th>
+            <th>{{i.student_id.name}}</th>
+            <th>{{i.student_id.age}}</th>
+            <th>{{i.student_id.address}}</th>
+            <th>{{i.student_id.gender}}</th>
+            <th>{{i.student_id.username}}</th>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+{% endblock %}

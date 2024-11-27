@@ -1,0 +1,94 @@
+{% extends 'commonbase.html' %}
+
+{% block content %}
+  
+<body
+    style="background-image: url('./Product/images.png');background-color: rgb(250, 246, 240);background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <div class="container border p-4">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <form method="post" action="{% url 'studentpassaction' %}">
+                    {% csrf_token %}
+                <table width="100%">
+                    <tr>
+                        <th>old password</th>
+                        <td><input type="password" name="old" class="form-control">
+                        <br></td>
+                    
+                    </tr>
+                    <br>
+               
+                    <tr>
+                        <th>new password</th>
+                        <td><input type="password" name="new" class="form-control">
+                        <br></td>
+                    </tr>
+                    <br>
+  
+                    <tr>
+                        <th>new password confirm</th>
+                        <td><input type="password"  name="confirm" class="form-control"><br></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th></th>
+                        <td><input type="submit" value="submit" class="btn btn-danger"></td>
+                    </tr>
+                </table>
+                </form>
+                {% if message %}
+                {% for m in message %}
+                    <script>
+                        alert("{{m}}")
+                    </script>
+               {% endfor %}
+               {% endif %}
+            </table>
+        </div>
+        <div class="col-md-3 col-sm-12">
+        </div>
+    </div>
+    </div>
+</body>
+
+
+<br>
+<br>
+
+{% endblock %}  
+  
+  
+  
+  
+  
+
+<body>
+
+    <form action="{% url 'studentpassaction' %}" method='post'>
+        {% csrf_token %}
+        <label for="">old password</label>
+        <input type="password" name='old'>
+        <br>
+        <br>
+        <label for="">new password</label>
+        <input type="password" name='new'>
+        <br>
+        <br>
+        <label for="">confirm new password</label>
+        <input type="password" name='confirm'>
+        <br>
+        <br>
+        <input type="submit" value='submit'>    
+    </form>
+    {% if message %}
+    {% for m in message %}
+    <script>
+        alert("{{m}}")
+    </script>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>

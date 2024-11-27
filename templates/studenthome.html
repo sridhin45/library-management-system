@@ -1,0 +1,80 @@
+{% extends 'commonbase.html' %}
+
+{% block content %}
+
+<div class="col-md-3 col-sm-12">
+</div>
+
+<div class="col-md-6 col-sm-12">
+<div style="padding-top: 4px;">
+    <a href="{% url 'logout' %}"><button class="btn btn-danger">logout</button></a>
+<br>
+<br>
+
+
+</div>
+ <div style="padding-top: 4px;">
+    <a href="{% url 'view_book' %}"><button class="btn btn-danger">view book</button></a>
+</div>
+<br>
+
+
+<div style="padding-top: 4px;">
+    <a href="{% url 'reserved' %}"><button class="btn btn-danger">view reserved books</button></a>
+</div>
+<br>
+
+<div style="padding-top: 4px;">
+    <a href="{% url 'myhistory' %}"><button class="btn btn-danger">view history</button></a>
+</div>
+<br>
+
+<div style="padding-top: 4px;">
+    <a href="{% url 'profile' %}"><button class="btn btn-danger">view profile</button></a>
+</div>
+<br>
+
+
+<div style="padding-top: 4px;">
+    <a href="{% url 'changestudent' %}"><button class="btn btn-danger">change password</button></a>
+</div>
+<div class="col-md-3 col-sm-12">
+</div>
+<br>
+<br>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <h2>hello welcome</h2>
+    <br>
+    <h2><a href="{% url 'logout' %}">logout</a></h2>
+    <br>
+    <h2><a href="{% url 'view_book' %}">view books</a></h2>
+    <br>
+    <h2><a href="{% url 'reserved' %}">view reserved books</a></h2>
+    <br>
+    <h2><a href="{% url 'myhistory' %}">history</a></h2>
+    <h2><a href="{% url 'profile' %}">view profile</a></h2>
+    <h2><a href="{% url 'changestudent' %}">change password</a></h2>
+</body>
+</html>

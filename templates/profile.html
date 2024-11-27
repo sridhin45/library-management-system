@@ -1,0 +1,104 @@
+{% extends 'commonbase.html' %}
+
+{% block content %}
+
+<body
+    style="background-image: url('./Product/images.png');background-color: rgb(250, 246, 240);background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <div class="container border p-4">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                {% for i in pr %}
+                <form method="post" action="">
+                    {% csrf_token %}
+                <table width="100%">
+                    <tr>
+                        <th>Name</th>
+                        <td><input type="text" value="{{i.name}}" class="form-control">
+                        <br></td>
+                    
+                    </tr>
+                    <br>
+               
+                    <tr>
+                        <th>age</th>
+                        <td><input type="age" value="{{i.age}}" class="form-control">
+                        <br></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th>gender</th>
+                        <td>
+                        <input type="text" value="{{i.gender}}" class="form-control">
+                        <br>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th>Address</th>
+                        <td><textarea   cols="50" rows="5" class="form-control">{{i.address}}</textarea><br></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td><input type="text" value="{{i.username}}" class="form-control"><br></td>
+                    </tr>
+                    <br>
+                </table>
+                </form>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-md-3 col-sm-12">
+        </div>
+    </div>
+    </div>
+</body>
+
+
+<br>
+<br>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    {% for i in pr %}
+    <form action=""method='post'>
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" value="{{i.name}}">
+        <br>
+        <br>
+        <label for="">age</label>
+        <input type="age" value="{{i.age}}">
+        <br>
+        <br>
+        <label for="">address</label>
+        <textarea>{{i.address}}</textarea>
+        <br>
+        <br>
+        <label for="">gender</label>
+        <input type="text" value="{{i.gender}}" id="">
+        </select>
+        <br>
+        <br>
+        <label for="">username</label>
+        <input type="text" value="{{i.username}}">
+        <br>
+        <br>
+    </form>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% extends 'commonbase.html' %}
+
+{% block content %}
+<br>
+<br>
+<body
+    style="background-image: url('./Product/images.png');background-color: rgb(250, 246, 240);background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <div class="container border p-4">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+            </div>
+            <br>
+            <br>
+
+
+            <div class="col-md-6 col-sm-12">
+                <form method="post" action="{% url 'add_category' %}">
+                    {% csrf_token %}
+                <table width="100%">
+                    <tr>
+                        <th>category</th>
+                        <td><input type="text" name="category" class="form-control">
+                        </td>
+                    </tr>
+                    </table>     
+                        <td><input type="submit" value="add" class="btn btn-danger"></td>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                     </div>
+                </form>
+                {% if messages %}
+                {% for m in messages %}
+                <script>
+                   alert("{{m}}")
+                </script>
+                {% endfor %}
+                {% endif %}
+        </div>
+    </div>
+</body>
+<br>
+<br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

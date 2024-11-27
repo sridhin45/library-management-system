@@ -1,0 +1,34 @@
+{% extends 'commonbase.html' %}
+
+
+{% block content %}
+<br>
+<br>
+<table class="table table-bordered table-hover table-striped table-responsive-md">
+    <tr class="bg-warning">
+        <tr>
+            <th>name</th>
+            <th>author</th>
+            <th>category</th>
+            <th>description</th>
+            <th>coverphoto</th>
+            <th>No_of_copies</th>
+            <th>edit</th>
+        </tr>
+        {% for i in m %}
+        <tr>
+            <th>{{i.name}}</th>
+            <th>{{i.author}}</th>
+            <th>{{i.category.name}}</th>
+            <th>{{i.description}}</th>
+            <th><img src="{{i.coverphoto.url}}" alt="" style="width:200px;height:200px"></th>
+            <th>{{i.No_of_copies}}</th>
+            <th><a href="{% url 'edit' i.id %}">edit</a></th>
+            <th><a href="{% url 'delete' i.id %}">delete</a></th>
+
+        </tr>
+        {% endfor %}
+    </table>
+<br>
+<br>
+{% endblock%}
